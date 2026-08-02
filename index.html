@@ -7,11 +7,13 @@
 <title>Tazbe Chicken | Best Broast in Jeddah – Open 24 Hours</title>
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://hsndm566.github.io/tazbe-chicken/">
-  <meta property="og:type" content="restaurant">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tazbe Chicken">
   <meta property="og:title" content="Tazbe Chicken | Best Broast in Jeddah – Open 24 Hours">
   <meta property="og:description" content="Crunchy. Juicy. Always Open. Best broast in Jeddah, open 24 hours.">
   <meta property="og:url" content="https://hsndm566.github.io/tazbe-chicken/">
+<meta property="og:image" content="https://hsndm566.github.io/tazbe-chicken/images/og-image.png">
+<meta name="twitter:image" content="https://hsndm566.github.io/tazbe-chicken/images/og-image.png">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ar_SA">
   <meta name="twitter:card" content="summary_large_image">
@@ -42,14 +44,19 @@
       "@type": "GeoCoordinates",
       "latitude": 21.4858,
       "longitude": 39.2157
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hassan Mohammed",
+      "url": "https://hsndm.tech"
     }
   }
   </script>
 
 <meta name="description" content="Tazbe Chicken - Crunchy. Juicy. Always Open. Best broast in Jeddah, open 24 hours.">
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind CSS — prebuilt (no CDN runtime; mobile-friendly) -->
+<link rel="stylesheet" href="css/tailwind.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <!-- Google Fonts -->
@@ -260,6 +267,16 @@
     color:#0a0a0a;
     font-weight:600;
   }
+
+  /* Tailwind arbitrary-value utilities the JIT prebuild missed — defined
+     explicitly so the design renders without the CDN. */
+  .tracking-\[0\.3em\]{ letter-spacing:0.3em; }
+  .tracking-\[0\.25em\]{ letter-spacing:0.25em; }
+  .leading-\[0\.95\]{ line-height:0.95; }
+  .py-2\.5{ padding-top:0.625rem; padding-bottom:0.625rem; }
+  .px-5{ padding-left:1.25rem; padding-right:1.25rem; }
+  .\!py-2\.5{ padding-top:0.625rem !important; padding-bottom:0.625rem !important; }
+  .\!px-5{ padding-left:1.25rem !important; padding-right:1.25rem !important; }
 </style>
 <style>.menu-img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin:10px 0;}</style>
 </head>
@@ -284,7 +301,7 @@
         <button type="button" data-lang-btn="en" class="active" aria-pressed="true">EN</button>
         <button type="button" data-lang-btn="ar" aria-pressed="false">عربي</button>
       </div>
-      <a href="tel:+966553792358""hidden sm:inline-flex btn btn-fire !py-2.5 !px-5 text-xs sm:text-sm">
+      <a href="tel:+966553792358" class="hidden sm:inline-flex btn btn-fire !py-2.5 !px-5 text-xs sm:text-sm">
         <i class="fa-solid fa-phone"></i> <span data-i18n="nav_call">Call Now</span>
       </a>
       <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden w-11 h-11 flex items-center justify-center rounded-lg border border-[#262220]">
@@ -299,7 +316,7 @@
       <a href="#menu" class="py-2 flex items-center min-h-[44px]" data-i18n="nav_menu">Menu</a>
       <a href="#reviews" class="py-2 flex items-center min-h-[44px]" data-i18n="nav_reviews">Reviews</a>
       <a href="#connect" class="py-2 flex items-center min-h-[44px]" data-i18n="nav_contact">Contact</a>
-      <a href="tel:+966553792358""btn btn-fire w-full mt-1">
+      <a href="tel:+966553792358" class="btn btn-fire w-full mt-1">
         <i class="fa-solid fa-phone"></i> <span data-i18n="nav_call">Call Now</span>
       </a>
     </div>
@@ -308,8 +325,8 @@
 
 <!-- ===================== HERO ===================== -->
 <section id="home" class="min-h-screen flex items-center pt-28 pb-16 px-5 sm:px-8 relative overflow-hidden">
-  <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-    <source src="<source src="images/hero.mp4" type="video/mp4">" type="video/mp4">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="images/kitchen-reel.mp4" type="video/mp4">
   </video>
   <div class="hero-video-overlay absolute inset-0"></div>
   <div class="max-w-5xl mx-auto text-center w-full reveal relative z-10">
@@ -558,7 +575,7 @@
           <div class="menu-img-placeholder" style="width:100%;height:200px;background:#f0f0f0;border:2px dashed #ccc;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px;margin:10px 0;">[ Image: Dynamic Chicken ]</div>
         </div>
         <div class="flex items-start justify-between gap-3 mb-1">
-          <h3 class="font-display text-lg font-semibold" data-i18n="m_1_7">Dynamic Chicken</h3>
+          <h3 class="font-display text-lg font-semibold" data-i18n="m_1_7">Dynamic Chicken Sandwich</h3>
           <span class="font-display fire-text font-bold whitespace-nowrap" data-i18n="price_0">SAR 10 / 14</span>
         </div>
         <p class="text-sm text-[#8a8078] mb-4" data-i18n="m_1_7_d">Fresh from the pressure fryer — golden, crispy, juicy.</p>
@@ -946,10 +963,11 @@
     <p class="font-display tracking-widest">TAZBE <span class="fire-text">CHICKEN</span></p>
     <p data-i18n="footer_copyright">&copy; 2026 Tazbe Chicken. All rights reserved.</p>
     <p class="text-xs mt-1"><i class="fa-solid fa-phone"></i> 0553792358 • Open 24 Hours • Jeddah</p>
+    <p class="text-xs mt-2 opacity-70">Designed &amp; built by Hassan Mohammed — <a href="https://hsndm.tech" class="hover:text-orange-400 transition-colors" target="_blank" rel="noopener">hsndm.tech</a></p>
     <div class="flex items-center gap-4 text-lg">
       <a href="#" class="hover:text-orange-400 transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       <a href="#" class="hover:text-orange-400 transition-colors" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="tel:+966553792358""hover:text-orange-400 transition-colors" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+      <a href="tel:+966553792358" class="hover:text-orange-400 transition-colors" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
     </div>
   </div>
 </footer>
@@ -1028,7 +1046,7 @@
 
     hero_eyebrow:    { en: "JEDDAH'S PRESSURE-FRIED FAVORITE", ar: 'المفضل في جدة للدجاج المقرمش' },
     hero_tagline:    { en: 'Best Broast in Jeddah – Open 24 Hours', ar: 'أفضل بروست في جدة – مفتوح ٢٤ ساعة' },
-    hero_sub:        { en: 'Crunchy. Juicy. Always Open.', ar: 'مقرمش. عصيري. مفتوح دائمًا.' },
+    hero_sub:        { en: 'Crunchy. Juicy. Always Open.', ar: 'مقرمش. طري. مفتوح دائمًا.' },
     hero_order:      { en: 'Order Now', ar: 'اطلب الآن' },
     hero_viewmenu:   { en: 'View Menu', ar: 'عرض القائمة' },
     hero_directions: { en: 'Get Directions', ar: 'احصل على الاتجاهات' },
@@ -1173,7 +1191,7 @@
     m_1_4:{ en: 'Emirates Club', ar: 'كلوب إماراتي' },
     m_1_5:{ en: 'Zinger Grill', ar: 'زنجر مشوي' },
     m_1_6:{ en: 'Dynamic Chicken', ar: 'دجاج داينمايت' },
-    m_1_7:{ en: 'Dynamic Chicken', ar: 'دجاج داينمايت' },
+    m_1_7:{ en: 'Dynamic Chicken Sandwich', ar: 'دجاج داينمايت ساندويتش' },
     m_1_8:{ en: 'Wedges Chicken', ar: 'ودجز دجاج' },
     m_1_9:{ en: 'Chicken Fries', ar: 'تشيكن فرايز' },
     m_1_10:{ en: 'Kids Meal', ar: 'وجبة أطفال' },
@@ -1190,26 +1208,26 @@
     m_3_0:{ en: 'Wedges', ar: 'ودجز' },
     m_3_1:{ en: 'Onion Rings', ar: 'حلقات بصل' },
     m_3_2:{ en: 'Fries (Small/Medium/Large)', ar: 'بطاطس (صغير/وسط/كبير)' },
-    cat_0_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_0_0_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_0_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_0_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
+    cat_0_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_0_0_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_0_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_0_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
     m_0_3_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
     m_0_4_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
-    cat_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_0_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_3_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_4_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_5_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_6_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_7_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
+    cat_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_0_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_3_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_4_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_5_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_6_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_7_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
     m_1_8_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
     m_1_9_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
-    m_1_10_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    m_1_11_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
-    cat_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
+    m_1_10_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    m_1_11_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
+    cat_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
     m_2_0_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
     m_2_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
     m_2_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
@@ -1217,7 +1235,7 @@
     m_2_4_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
     m_2_5_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
     m_2_6_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
-    cat_3_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
+    cat_3_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وطري.' },
     m_3_0_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
     m_3_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
     m_3_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من قلاية الضغط — ذهبي، مقرمش، وطري.' },
@@ -1255,12 +1273,13 @@
   // Restore saved language on load (defaults to English)
   applyLanguage(localStorage.getItem('bk_lang') === 'ar' ? 'ar' : 'en');
 
-  // Lazy videos: load source only when near viewport, pause when off-screen
-  // (prevents multiple videos decoding at once -> no mobile crash)
+  // Lazy videos: load source only when near viewport, pause when off-screen.
+  // Hero background video is included too, so it pauses when scrolled away
+  // (prevents the hero + kitchen videos decoding simultaneously -> no mobile crash).
   (function(){
-    var vids = Array.prototype.slice.call(document.querySelectorAll('video.lazy-video'));
+    var vids = Array.prototype.slice.call(document.querySelectorAll('video.lazy-video, video.hero-video'));
     if (!('IntersectionObserver' in window)) {
-      vids.forEach(function(v){ if (v.dataset.src) v.src = v.dataset.src; });
+      vids.forEach(function(v){ if (v.dataset.src && !v.src) v.src = v.dataset.src; });
       return;
     }
     var io = new IntersectionObserver(function(entries){
