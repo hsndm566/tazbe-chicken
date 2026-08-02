@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hsndm566.github.io/tazbe-chicken/sitemap.xml
