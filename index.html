@@ -812,6 +812,27 @@
   </div>
 </section>
 
+<!-- ===================== KITCHEN REEL ===================== -->
+<section id="kitchen" class="px-5 sm:px-8 py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <p class="font-display tracking-[0.3em] text-orange-400 text-sm mb-3" data-i18n="kitchen_eyebrow">FROM OUR KITCHEN</p>
+      <h2 class="font-display font-bold text-4xl sm:text-5xl" data-i18n="kitchen_h2">Fresh Out The <span class="fire-text">Fryer</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+      <div class="reveal rounded-2xl overflow-hidden border border-[#262220] bg-[#0d0b0a]">
+        <video class="lazy-video w-full" data-src="images/kitchen-reel.mp4" poster="images/og-image.png"
+               muted loop playsinline preload="none" aria-label="Tazbe Chicken kitchen reel"></video>
+      </div>
+      <div class="reveal rounded-2xl overflow-hidden border border-[#262220] bg-[#0d0b0a]">
+        <video class="lazy-video w-full" data-src="images/hero-dish.mp4" poster="images/og-image.png"
+               muted loop playsinline preload="none" aria-label="Tazbe Chicken broast being lifted"></video>
+      </div>
+    </div>
+    <p class="text-center text-[#8a8078] text-sm mt-6" data-i18n="kitchen_cap">Open 24 hours — golden, crispy, always fresh.</p>
+  </div>
+</section>
+
 <!-- ===================== REVIEWS ===================== -->
 <section id="reviews" class="px-5 sm:px-8 py-20 sm:py-28 bg-[#0d0b0a]">
   <div class="max-w-7xl mx-auto">
@@ -1201,7 +1222,10 @@
     m_3_1_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
     m_3_2_d:{ en: 'Fresh from the pressure fryer — golden, crispy, juicy.', ar: 'طازج من القلاية الضاغطة — ذهبي ومقرمش وعصيري.' },
     menu_eyebrow2:{ en: 'STRAIGHT FROM THE PRESSURE FRYER', ar: 'طازج مباشرة من القلاية الضاغطة' },
-    menu_sub2:{ en: 'Best broast in Jeddah, open 24 hours. Fresh, hot, and always crispy.', ar: 'أفضل بروست في جدة، مفتوح ٢٤ ساعة. طازج وساخن ومقرمش دائمًا.' }  };
+    menu_sub2:{ en: 'Best broast in Jeddah, open 24 hours. Fresh, hot, and always crispy.', ar: 'أفضل بروست في جدة، مفتوح ٢٤ ساعة. طازج وساخن ومقرمش دائمًا.' },
+    kitchen_eyebrow: { en: 'FROM OUR KITCHEN', ar: 'من مطبخنا' },
+    kitchen_h2:      { en: 'Fresh Out The <span class="fire-text">Fryer</span>', ar: 'طازج من <span class="fire-text">القلاية</span>' },
+    kitchen_cap:     { en: 'Open 24 hours — golden, crispy, always fresh.', ar: 'مفتوح ٢٤ ساعة — ذهبي، مقرمش، طازج دائمًا.' },  };
 
   function applyLanguage(lang){
     document.documentElement.setAttribute('lang', lang);
@@ -1230,6 +1254,28 @@
 
   // Restore saved language on load (defaults to English)
   applyLanguage(localStorage.getItem('bk_lang') === 'ar' ? 'ar' : 'en');
+
+  // Lazy videos: load source only when near viewport, pause when off-screen
+  // (prevents multiple videos decoding at once -> no mobile crash)
+  (function(){
+    var vids = Array.prototype.slice.call(document.querySelectorAll('video.lazy-video'));
+    if (!('IntersectionObserver' in window)) {
+      vids.forEach(function(v){ if (v.dataset.src) v.src = v.dataset.src; });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target;
+        if (e.isIntersecting) {
+          if (v.dataset.src && !v.src) v.src = v.dataset.src;
+          var p = v.play(); if (p && p.catch) p.catch(function(){});
+        } else {
+          v.pause();
+        }
+      });
+    }, { rootMargin: '200px', threshold: 0.1 });
+    vids.forEach(function(v){ io.observe(v); });
+  })();
 </script>
 
 
